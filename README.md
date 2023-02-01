@@ -1,6 +1,6 @@
 # Transpiler votre Typescript en Javascript
 
-Vous pouvez voir le repo d'exemple à cette [adresse](https://github.com/L0mens/ts-config-debugger)
+Regarder le fichier le plus à jour entre ce readme et le fichier Transpiler TypeScript en Javascript.md
 
 ## Méthode en ligne de commande (Pratique pour VSCode)
 
