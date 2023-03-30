@@ -1,6 +1,6 @@
 # Transpiler votre Typescript en Javascript
 
-Vous pouvez voir le repo d'exemple à cette [adresse](https://github.com/L0mens/ts-config-debugger)
+Regarder le fichier le plus à jour entre ce readme et le fichier Transpiler TypeScript en Javascript.md
 
 ## Méthode en ligne de commande (Pratique pour VSCode)
 
@@ -8,20 +8,21 @@ Vous pouvez voir le repo d'exemple à cette [adresse](https://github.com/L0mens/
 
 Pour ce faire, nous aurons besoin de npm (Node Package Manager). Il est fourni avec l'installation de NodeJS
 
-1. A la racide de votre projet de travail, installez TypeScript via npm 
+1. A la racine de votre projet de travail, installez TypeScript via npm
 
 ```bash
-    npm install ts --save-dev
+    npm install typescript --save-dev
 ```
 
-Vous devriez avoir 3 nouveaux fichiers/dossiers s'il n'existaient pas (node_modules, package.json, package-lock.json)
+Vous devriez avoir 3 nouveaux fichiers/dossiers s'ils n'existaient pas (node_modules, package.json, package-lock.json)
 
-2. Toujours, à la racine de votre projet, ajouter un fichier tsconfig.json avec ceci à l'intérieur
+2. Toujours, à la racine de votre projet, ajouter un fichier tsconfig.json avec ceci à l'intérieur. Attention aux
+   clés outDir et rootDir.
 
-```js
+```JSmin
 {
     "compilerOptions": {
-      "target": "es5",
+      "target": "es6",
       "module": "commonjs",
       "declaration": false,
       "noImplicitAny": false,
@@ -37,20 +38,22 @@ Vous devriez avoir 3 nouveaux fichiers/dossiers s'il n'existaient pas (node_modu
 
 Ce fichier peut être adapté à vos besoins/à votre archi de projet
 
-3. Utilisez la commande TS suivante pour mettre votre terminal en mode surveillance. Il transpilera alors vos fichier lors d'une sauvegarde (et au lancement).
+3. Utilisez la commande TS suivante pour mettre votre terminal en mode surveillance. Il transpilera
+   alors vos fichiers lors d'une sauvegarde (et au lancement).
 
 ```bash
     npx tsc --watch
 ```
 
-Vous pouvez arrêter le mode watch en fermant le terminal ou avec le raccourcis CTRL + C
+Vous pouvez arrêter le mode watch en fermant le terminal ou avec le raccourci CTRL + C
 
 ### Utiliser le debugger de VSCode
 
 Nous allons devoir configurer notre VSCode pour lancer notre fichier HTML principal. Pour cela, nous devons avoir un dossier nommé
-.vscode à la racine de notre projet (Celui-ci pourrait déjà exister !)
+'.vscode' à la racine de notre projet (Celui-ci pourrait déjà exister !)
 
-A l'intérieur, créez ou modifier le fichier launch.json pour qu'il contienne les informations suivantes : 
+À l'intérieur, créez ou modifiez le fichier launch.json pour qu'il contienne les informations
+suivantes :
 
 ```json
 {
@@ -69,17 +72,20 @@ A l'intérieur, créez ou modifier le fichier launch.json pour qu'il contienne l
 }
 ```
 
-Pour pouvoir utiliser le server, vérifiez que vous aillez l'extension Live Server de Ritwick Dey d'activé dans votre VSC. Puis lancez le live server depuis votre fichier HTML (Click droit dans votre fichier > Open Live Server). 
+Pour pouvoir utiliser le server, vérifiez que vous aillez l'extension Live Server de Ritwick Dey d'activé dans votre VSC. Puis lancez le live server depuis votre fichier HTML (Click droit dans votre fichier > Open Live Server).
 
-Le port sur lequel il est lancé devrait être indiqué dans la barre coloré (souvent bleu ou violette) en bas à droite. Mettez à jour votre launch.json avec le bon port après localhost
+Le port sur lequel il est lancé devrait être indiqué dans la barre colorée (souvent bleue ou
+violette) en bas à droite. Mettez à jour votre launch.json avec le bon port après localhost
 
 ![port_live_server](./public/img/port_live_server.png)
 
-Une fois cela fais, rendez-vous dans l'onglet Run & Debug (Un petit insect avec un triangle dans les onglets de gauche).
+Une fois cela fait, rendez-vous dans l'onglet Run & Debug (Un petit insect avec un triangle dans
+les onglets de gauche).
 Vous aurez accès au bouton RUN (Triangle vert) dans le coin haut gauche de votre application.
-Cliquez dessus, cela lancera une fenêtre Edge avec votre fichier. 
+Cliquez dessus, cela lancera une fenêtre Edge avec votre fichier.
 
-Vous devriez pouvoir mettre des breakpoints dans votre code TS ! Une fois lancé en mode débug, le programme s'arrêtera la où vouis l'avez souhaité ! Vous aurez même la console de votre navigateur dans l'onglet DEBUG CONSOLE de votre VSCode ! 
+Vous devriez pouvoir mettre des breakpoints dans votre code TS ! Une fois lancé en mode debug,
+le programme s'arrêtera là où vous l'avez souhaité ! Vous aurez même la console de votre navigateur dans l'onglet DEBUG CONSOLE de votre VSCode !
 
 ```text
     Sur Windows, le raccourcis pour aller dans l'onglet debug est Ctrl + Shift + D, puis pour run, il suffit d'appuyer sur F5
@@ -87,6 +93,4 @@ Vous devriez pouvoir mettre des breakpoints dans votre code TS ! Une fois lancé
 
 ## Pour WebStorm
 
-La doc est très explicite et je vous invite à la consulter (English Only)
-
-[Documentation](https://www.jetbrains.com/help/webstorm/compiling-typescript-to-javascript.html)
+La doc est très explicite et je vous invite à la consulter (English Only) [Documentation](https://www.jetbrains.com/help/webstorm/compiling-typescript-to-javascript.html)

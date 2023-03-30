@@ -10,7 +10,7 @@
             "name": "Open index.html",            
             "webRoot": "${workspaceFolder}",
             "runtimeExecutable": "stable",
-            "url": "http://localhost:5500/src"
+            "url": "http://localhost:5500/public"
         }
     ]
 }
